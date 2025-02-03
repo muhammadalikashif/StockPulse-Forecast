@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="{%url 'profile' %}"><b>Stock Pulse</b></a>
+        <!-- Navbar content here -->
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Search Form -->
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Django Form for Stock Symbol Search -->
+                <form action="{% url 'analysis' %}" method="get" class="input-group mb-3">
+                    <input type="text" class="form-control" name="symbol" placeholder="Enter Stock Symbol"
+                        aria-label="Stock Symbol">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Analyze</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Stock Data Display -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ company_name }} ({{ symbol }})</h5>
+                        <p><strong>Current Price</strong> {{ open_price }}</p>
+                        <p><strong>Market Cap:</strong> {{ market_cap }}</p>
+                        <p><strong>Volume:</strong> {{ volume }}</p>
+                        <p>{{ description }}</p>
+                        <!-- Add other information as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Analysis -->
+        <div class="row mt-3 mb-5">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Detailed Analysis</h5>
+                        <div class="card-body">
+                            <canvas id="stockChart" width="400" height="200"></canvas>
+                        </div>
+
+
+                        <!-- Additional data and analysis details -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-primary text-center text-white fixed-bottom
+        <div class=" container text-center">
+        <span>© 2023 StockPulse</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        const ctx = document.getElementById('stockChart').getContext('2d');
+        const stockChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ dates | safe }},
+        datasets: [{
+            label: '{{ symbol | safe }} Stock Price',
+            data: {{ prices | safe }},
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+                }]
+            },
+        options: {
+            responsive: true,
+                scales: {
+                y: {
+                    beginAtZero: false
+                }
+            },
+            interaction: {
+                mode: 'index',
+                    intersect: false,
+                },
+            plugins: {
+                title: {
+                    display: true,
+                        text: 'Stock Data for {{ symbol | safe }}'
+                }
+            }
+        }
+        });
+    </script>
+
+</body>
+
+</html>

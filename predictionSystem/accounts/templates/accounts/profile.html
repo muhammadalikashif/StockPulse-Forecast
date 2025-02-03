@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Forecast Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#"><b>Stock Pulse</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'profile' %}">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'info'%}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="{% url 'profile' %}" class="list-group-item list-group-item-action active">Dashboard</a>
+                    <a href="{% url 'analysis' %}" class="list-group-item list-group-item-action">Stock Analysis</a>
+                    <a href="{% url 'notes' %}" class="list-group-item list-group-item-action">Notes</a>
+                    <a href="{% url 'forecast' %}" class="list-group-item list-group-item-action">Forecast</a>
+                    <a href="{% url 'accountsettings' %}" class="list-group-item list-group-item-action">Settings</a>
+                </div>
+            </div>
+
+
+            <div class="col-md-10 mb-5">
+                <div class="d-flex align-items-center mb-3">
+                    <!-- User Profile Image -->
+                    <img src="{% if user.profile_picture %}{{ user.profile_picture.url }}{% else %}{{ MEDIA_URL }}profile_pics/default.jpg{% endif %}"
+                        alt="Profile Image" class="rounded-circle mr-2" style="width: 50px; height: 50px;">
+                    <h2>Welcome, {{ user.first_name | title }} {{ user.last_name | title }}</h2>
+                </div>
+
+
+                <!-- Market Summary and Portfolio Performance -->
+                <div class="row g-3">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <h5 class="card-header">Market Summary</h5>
+                            <div class="card-body">
+                                <p><strong>Top Movers:</strong> Stocks with the biggest moves today.</p>
+                                <p><strong>Market Trends:</strong> Snapshot of the market trends.</p>
+                                <p><strong>Your Watchlist:</strong> Real-time updates on your stocks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <h5 class="card-header">Portfolio Performance</h5>
+                            <div class="card-body">
+                                <p><strong>Overview:</strong> Summary of your portfolio's performance.</p>
+                                <p><strong>Holdings:</strong> Review your stock holdings and their performance.</p>
+                                <p><strong>Alerts:</strong> Manage alerts for price changes and announcements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insights and Analysis -->
+                <div class="card my-3">
+                    <h5 class="card-header">Insights and Analysis</h5>
+                    <div class="card-body">
+                        <p><strong>Latest Analysis:</strong> Expert stock analyses and insights.</p>
+                        <p><strong>Investment Ideas:</strong> Fresh investment ideas based on market trends.</p>
+                        <p><strong>Research Tools:</strong> Access to stock screener and historical data.</p>
+                    </div>
+                </div>
+
+                <!-- News and Updates -->
+                <div class="card my-3">
+                    <h5 class="card-header">News and Updates</h5>
+                    <div class="card-body">
+                        <p><strong>Market News:</strong> Latest news affecting the markets.</p>
+                        <p><strong>Stock Pulse Updates:</strong> New features and community highlights.</p>
+                    </div>
+                </div>
+
+                <!-- Settings -->
+                <div class="card my-3">
+                    <h5 class="card-header">Settings</h5>
+                    <div class="card-body">
+                        <p><strong>Customize Dashboard:</strong> Personalize the widgets and data displayed.</p>
+                        <p><strong>Account Settings:</strong> Update your personal information and manage your
+                            subscription.</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder for Graphs -->
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer class="footer mt-auto py-3 bg-primary fixed-bottom text-white">
+        <div class="container text-center">
+            <span>© 2023 StockPulse</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

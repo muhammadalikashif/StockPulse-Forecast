@@ -1,0 +1,896 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="AI Stock Prediction Web App">
+    <meta name="author" content="Your Name">
+    <!-- Add your favicon link here -->
+    <title>Stock Prediction App</title>
+
+    <!-- CSS Stylesheets -->
+
+    <!-- Favicons -->
+    <!-- <link href="{% static 'home/assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'home/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> -->
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'home/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'home/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'home/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'home/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'home/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'home/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'home/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'home/assets/css/style.css' %}" rel="stylesheet">
+
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/slick/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/slick/slick-theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/aos/aos.css' %}"> -->
+
+
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}"> -->
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+
+            <!-- <h1 class="logo me-auto"><a href="index.html">Stock Pulse</a></h1> -->
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="index.html" class="logo me-auto"><img src="{% static 'home/assets/img/Logo.png' %} " alt=""
+                    class="img-fluid" height="200px"></a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="/blog">Blogs</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="getstarted scrollto" href="{% url 'login' %}">Login</a></li>
+                    <li><a class="getstarted scrollto" href="{% url 'signup' %}">SignUp</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <h1>Unlock Market Insights with Precisions</h1>
+                    <h2>Welcome to Stock Pulse, where your journey into intelligent investment begins.</h2>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a href="{% url 'signup' %}" class="btn-get-started scrollto">Get Started</a>
+                        <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
+                                class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="{% static 'home/assets/img/mobile.png' %}" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Clients Section ======= -->
+        <section id="clients" class="clients section-bg">
+            <div class="container">
+
+                <div class="row" data-aos="zoom-in">
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{% static 'home/assets/img/clients/Client-1.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{% static 'home/assets/img/clients/client-2.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{% static 'home/assets/img/clients/client-3.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{% static 'home/assets/img/clients/client-4.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{% static 'home/assets/img/clients/client-5.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="{% static 'home/assets/img/clients/client-6.png' %}" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Cliens Section -->
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>About Us</h2>
+                </div>
+
+                <div class="row content">
+                    <div class="col-lg-6">
+                        <p>
+                            We believe in democratizing stock market analysis, making it accessible and understandable
+                            for everyone.
+                            Our platform is
+                            not just a tool, but a learning companion that guides you through the intricacies of
+                            investing.
+                        </p>
+                        <ul>
+                            <li><i class="ri-check-double-line"></i> To empower users with real-time, data-driven
+                                insights.</li>
+                            <li><i class="ri-check-double-line"></i> To educate future investors with comprehensive
+                                learning modules.
+                            </li>
+                            <li><i class="ri-check-double-line"></i> To innovate continuously, enhancing our AI
+                                algorithms for better
+                                predictions.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <p>
+                            Welcome to Stock Pulse, the culmination of extensive research, dedication, and a passion for
+                            financial
+                            markets.
+                            As a final year project, our aim is to bridge the gap between academic theory and practical
+                            market
+                            analysis through the
+                            innovative use of AI technology.
+                        </p>
+                        <a href="#" class="btn-learn-more">Learn More</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End About Us Section -->
+
+        <!-- ======= Why Us Section ======= -->
+        <section id="why-us" class="why-us section-bg">
+            <div class="container-fluid" data-aos="fade-up">
+
+                <div class="row">
+
+                    <div
+                        class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                        <div class="content">
+                            <h3>Experience the Clarity of <strong>Expert Analysis</strong></h3>
+                            <p>
+                                In the vast sea of market speculation, Stock Pulse stands as a beacon of insight,
+                                offering clear,
+                                data-driven
+                                perspectives that guide you through the ebbs and flows of the stock market.
+                            </p>
+                        </div>
+
+                        <div class="accordion-list">
+                            <ul>
+                                <li>
+                                    <a data-bs-toggle="collapse" class="collapse"
+                                        data-bs-target="#accordion-list-1"><span>01</span>
+                                        Analyze with Confidence <i class="bx bx-chevron-down icon-show"></i><i
+                                            class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Harness the power of advanced analytics to evaluate market dynamics. Our
+                                            AI-driven tools provide
+                                            you with actionable
+                                            insights, helping you to make investment decisions backed by solid data.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
+                                        class="collapsed"><span>02</span>
+                                        Cutting-Edge Technology <i class="bx bx-chevron-down icon-show"></i><i
+                                            class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Leverage our state-of-the-art algorithms, developed through rigorous
+                                            academic research, to gain an
+                                            edge in market
+                                            analysis. We bring the forefront of technological innovation directly to
+                                            your screen.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3"
+                                        class="collapsed"><span>03</span>
+                                        Education and Empowerment <i class="bx bx-chevron-down icon-show"></i><i
+                                            class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Beyond analysis, we prioritize investor education. Our resources are
+                                            designed to enhance your
+                                            understanding, enabling
+                                            you to not just follow, but to engage with the logic behind market trends.
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
+                        style="background-image: url('{% static 'home/assets/img/whyus.png' %}');" data-aos="zoom-in"
+                        data-aos-delay="150">
+                        &nbsp;
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Why Us Section -->
+
+        <!-- ======= Skills Section ======= -->
+        <section id="skills" class="skills">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+                        <img src="{% static 'home/assets/img/skills.png' %}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+                        <h3>Mastery at the Intersection of Finance and Technology</h3>
+                        <p class="fst-italic">
+                            At Stock Pulse, we pride ourselves on a robust foundation of skills that set our platform
+                            apart in
+                            delivering
+                            top-tier stock market analysis.
+                        </p>
+
+                        <div class="skills-content">
+
+                            <div class="progress">
+                                <span class="skill">Market Analysis <i class="val">100%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                                        aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="skill">Data Science & Analytics <i class="val">90%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="skill">Algorithmic Trading <i class="val">75%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="progress">
+                                <span class="skill">Financial Forecasting <i class="val">70%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Skills Section -->
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <p>Our suite of services is designed to equip you with comprehensive tools and insights for a
+                        smarter
+                        investment journey.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                            <h4><a href="">Real-Time Market Analysis</a></h4>
+                            <p>Stay ahead of the curve with live data and analysis that capture the pulse of the stock
+                                market.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+                        data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4><a href="">Predictive Analytics</a></h4>
+                            <p>Utilize our predictive models to gain foresight into market trends. Our advanced
+                                analytics give you the
+                                power to
+                                anticipate movements before they happen.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                        data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-tachometer"></i></div>
+                            <h4><a href="">Accurate Predictions</a></h4>
+                            <p>Our AI algorithms provide accurate stock price predictions to help you make informed
+                                investment
+                                decisions.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+                        data-aos-delay="400">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-layer"></i></div>
+                            <h4><a href="">Educational Resources</a></h4>
+                            <p>Expand your knowledge with our educational materials. From beginner guides to advanced
+                                trading
+                                strategies, we provide
+                                the resources you need to grow as an investor.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Services Section -->
+
+        <!-- ======= Cta Section ======= -->
+        <section id="cta" class="cta">
+            <div class="container" data-aos="zoom-in">
+
+                <div class="row">
+                    <div class="col-lg-9 text-center text-lg-start">
+                        <h3>Start Your Journey Today</h3>
+                        <p> Unlock exclusive features and get ahead in the market. Sign up now and begin your path to
+                            more informed,
+                            confident
+                            investment decisions.</p>
+                    </div>
+                    <div class="col-lg-3 cta-btn-container text-center">
+                        <a class="cta-btn align-middle" href="{% url 'signup' %}">Sign Up</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- ======= Pricing Section ======= -->
+        <section id="pricing" class="pricing">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Pricing</h2>
+                    <p>Whether you're just starting out or you're looking to scale up, we have a range of plans designed
+                        to fit
+                        your needs and
+                        budget.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box">
+                            <h3>Free Plan</h3>
+                            <h4><sup>$</sup>0<span>per month</span></h4>
+                            <ul>
+                                <li><i class="bx bx-check"></i> Access to basic stock market analysis</li>
+                                <li><i class="bx bx-check"></i> Real-time data updates</li>
+                                <li><i class="bx bx-check"></i> Personalized Notes </li>
+                                <li class="na"><i class="bx bx-x"></i><span>Market Forcasting </span></li>
+                                <li class="na"><i class="bx bx-x"></i><span>RealTime Prediction </span></li>
+                            </ul>
+                            <a href="#" class="buy-btn">Free</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="box featured">
+                            <h3>Business Plan</h3>
+                            <h4><sup>$</sup>29<span>per month</span></h4>
+                            <ul>
+                                <li><i class="bx bx-check"></i> Access to basic stock market analysis</li>
+                                <li><i class="bx bx-check"></i> Real-time data updates</li>
+                                <li><i class="bx bx-check"></i> Personalized Notes </li>
+                                <li><i class="bx bx-check"></i> Market Forcasting </li>
+                                <li class="na"><i class="bx bx-x"></i><span>RealTime Prediction </span></li>
+                            </ul>
+                            <a href="#" class="buy-btn">Buy Plan</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <div class="box">
+                            <h3>Developer Plan</h3>
+                            <h4><sup>$</sup>49<span>per month</span></h4>
+                            <ul>
+                                <li><i class="bx bx-check"></i> Access to basic stock market analysis</li>
+                                <li><i class="bx bx-check"></i> Real-time data updates</li>
+                                <li><i class="bx bx-check"></i> Personalized Notes </li>
+                                <li><i class="bx bx-check"></i> Market Forcasting </li>
+                                <li><i class="bx bx-check"></i> RealTime Prediction </li>
+                            </ul>
+                            <a href="#" class="buy-btn">Buy Plan</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Pricing Section -->
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Team</h2>
+                    <p>Reflecting on our final year project, it was a journey of relentless dedication and collaborative
+                        innovation. Amidst the challenges and late nights, our team's passion and unity transformed
+                        complex ideas
+                        into a remarkable
+                        reality, shaping not just our project, but ourselves as well. This period was a vivid testament
+                        to our
+                        growth and the power
+                        of teamwork.</p>
+                </div>
+
+                <div class="row">
+
+                    
+
+                    <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member d-flex align-items-start">
+                            
+                            <div class="member-info">
+                                <h4>Rao Shoaib</h4>
+                                <span>Backend Developer</span>
+                                <p>Rao Shoaib combines leadership with technical acumen to keep the project on track and
+                                    translate
+                                    complex data into
+                                    accessible insights.</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="member d-flex align-items-start">
+                            
+                            <div class="member-info">
+                                <h4>Jawad Ahmed</h4>
+                                <span>Documentation and project management</span>
+                                <p>Jawad's'contributes in enhancing the platform's functionality with
+                                    a focus on user
+                                    interface and data integration.</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="member d-flex align-items-start">
+                            
+                            <div class="member-info">
+                                <h4>Kumail Haider</h4>
+                                <span>Frontend Developer</span>
+                                <p>Kumail's role likely involves supporting the project's development with a focus
+                                    on innovative
+                                    analytics.</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Team Section -->
+
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        <section id="faq" class="faq section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Your questions answered. Get quick information on our stock market analysis platform.</p>
+                </div>
+
+                <div class="faq-list">
+                    <ul>
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
+                                data-bs-target="#faq-list-1">What services does Stock Pulse provide? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                                <p>
+                                    We offer real-time market analysis, predictive analytics, portfolio optimization,
+                                    and educational
+                                    resources to help you
+                                    make informed investment decisions.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-2" class="collapsed">Is there a trial period for the paid
+                                plans? <i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Yes, we offer a 14-day free trial for our Business and Developer plans, giving you
+                                    full access to our
+                                    premium features
+                                    without any commitment.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-3" class="collapsed">How up-to-date is the market data
+                                provided? <i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Our market data is updated in real-time, ensuring you have the latest information at
+                                    your fingertips.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-4" class="collapsed">Can I cancel or change my plan anytime?
+                                <i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Absolutely. You have the flexibility to change or cancel your plan at any time, with
+                                    no additional
+                                    fees.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="500">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-5" class="collapsed">Do you offer support for API integration
+                                on the Developer Plan? <i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Yes, our Developer Plan includes comprehensive API support, allowing for seamless
+                                    integration with
+                                    your existing
+                                    systems.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Frequently Asked Questions Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Our dedicated team is here to help. Contact us anytime. We're eager to
+                        assist you with your stock market queries and ensure your experience with Stock Pulse is
+                        exceptional!"</p>
+                </div>
+
+                <div class="row">
+
+                    
+
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="name">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Subject</label>
+                                <input type="text" class="form-control" name="subject" id="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Message</label>
+                                <textarea class="form-control" name="message" rows="10" required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="footer-newsletter">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h4>Stay Ahead of the Market Trends</h4>
+                        <p>Subscribe to our newsletter for the latest insights and updates in the world of stock market
+                            analysis.
+                            Get exclusive
+                            tips, market forecasts, and educational content delivered directly to your inbox.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Real-Time Market Analysis</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Predictive Analytics</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Portfolio Optimization</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Educational Resources</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Social Networks</h4>
+                        <p>Follow our social media for updates.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Stock Pulse</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'home/assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'home/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'home/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'home/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'home/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'home/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+    <script src="{% static 'home/assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- JavaScript -->
+    <script src="{% static 'home/plugins/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'home/plugins/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home/plugins/slick/slick.min.js' %}"></script>
+    <script src="{% static 'home/plugins/fancybox/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'home/plugins/aos/aos.js' %}"></script>
+
+    <script src="{% static 'home/js/script.js' %}"></script>
+
+
+    <script src="{% static 'home/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
+<!-- <body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+   
+    <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo"
+                    height="100px" width="200px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="ti-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+    <section class="section gradient-banner">
+        <div class="shapes-container">
+           
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="text-white font-weight-bold mb-4">AI Stock Prediction Web App</h1>
+                    <p class="text-white mb-5">Make informed investment decisions with our advanced AI-driven stock
+                        prediction tool.</p>
+                    <a href="sign-up.html" class="btn btn-main-md">Get Started</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img class="img-fluid" src="{% static 'images/mobile.png' %}" alt="stock prediction">
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section id="features" class="section pt-0 position-relative pull-top">
+        <div class="container">
+            <div class="rounded shadow p-5 bg-white">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+                        <i class="ti-stats-up text-primary h1"></i>
+                        <h3 class="mt-4 text-capitalize h5 ">Accurate Predictions</h3>
+                        <p class="regular text-muted">Our AI algorithms provide accurate stock price predictions to help
+                            you make informed investment decisions.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+                        <i class="ti-dashboard text-primary h1"></i>
+                        <h3 class="mt-4 text-capitalize h5 ">Real-time Data</h3>
+                        <p class="regular text-muted">Access real-time stock market data and analysis to stay updated
+                            with market trends.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
+                        <i class="ti-comments text-primary h1"></i>
+                        <h3 class="mt-4 text-capitalize h5 ">User Support</h3>
+                        <p class="regular text-muted">Our dedicated support team is available to assist you with any
+                            questions or issues you may have.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                    <p>&copy; 2023 Your Company. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+
+</body>
